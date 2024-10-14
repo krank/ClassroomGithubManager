@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --accent-color: rgb(255, 120, 187);
+}
+
+html {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  font-family: Lato;
+}
+
+nav.main,
+main {
+  padding: 2em;
+}
+
+nav.main {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+nav.main section {
+  margin-bottom: 3em;
+}
+
+nav.main h1 {
+  color: rgb(88, 88, 88);
+  font-size: 1em;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-bottom: .3em;
+}
+
+nav.main h1 a {
+  /* background-color: rgba(0, 128, 0, 0.166); */
+  text-decoration: none;
+  color: rgb(88, 88, 88);
+  display: block;
+  padding: .3em;
+  padding-right: 1em;
+  padding-left: .5em;
+  /* border-radius: 1em; */
+}
+
+nav.main h1 a:hover {
+  text-decoration: underline;
+}
+
+nav.main ul {
+  margin-top: .5em;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+nav.main ul a {
+  text-decoration: none;
+  color: rgb(44, 44, 44);
+  display: flex;
+  line-height: 24px;
+  padding-left: .7em;
+  padding-bottom: .1em;
+  border-radius: 1em;
+  align-items: center;
+}
+
+nav.main ul a::before {
+  font-family: 'Material Symbols Outlined';
+  content: "\f53c";
+  margin-right: .3em;
+}
+
+nav.main ul a:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+nav.main li.active a::after {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-family: 'Material Symbols Outlined';
+  content: "\e5df";
+  font-size: 24px;
+  flex-grow: 1;
+}
+
+nav.main button {
+  width: 100%;
+}
+
+
+nav.crumbs {
+  font-size: .8em;
+}
+
+nav.crumbs ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+}
+
+nav.crumbs li {
+  display: flex;
+  align-items: center;
+}
+
+nav.crumbs a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+}
+
+nav.crumbs a:hover {
+  text-decoration: underline;
+}
+
+nav.crumbs ul li:not(:last-child)::after {
+  font-family: 'Material Symbols Outlined';
+  content: "\e5df";
+  line-height: .5em;
+  padding-top: .2em;
+  /* font-size: 24px; */
+}
+
+header {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+}
+
+header .info {
+  font-size: .8em;
+}
+
+header .info p {
+  margin: 0;
+  font-style: italic;
+  letter-spacing: .03em;
+}
+
+header .buttons {
+  margin-left: auto;
+  display: flex;
+  align-items: end;
+}
+
+header .buttons ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  margin: 0;
+  gap:.3em;
+}
+
+
+
+button {
+  border: 1px solid var(--accent-color);
+  padding: 0 1.5em;
+  background-color: var(--accent-color);
+  margin: 0 .2em;
+  color: #fff;
+  border-radius: 2em;
+  cursor: pointer;
+  font-weight: 700;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .3em;
+}
+
+button:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #eee 10%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+}
+
+button.round {
+  padding: 0em;
+  width: 3em;
+}
+
+button.red {
+  background-color: red;
+  border-color: red;
+}
+
+button.outlined {
+  background-color: #fff;
+  color: var(--accent-color)
+}
+
+button.outlined:hover {
+  /* background-color: color-mix(in srgb, #fff, #eee 10%) */
+  background-color: #eee;
+}
+
+button.borderless {
+  background-color:transparent;
+  border: none;
+  color: var(--accent-color);
+}
+
+button:not(.round) i {
+  margin-left: -.5em;
+}
+
+button i, th i {
+  font-family: 'Material Symbols Outlined';
+  font-size: 24px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+
+
+
+
+/* TABLES */
+/* https://m2.material.io/components/data-tables#anatomy */
+
+table caption {
+  caption-side: bottom;
+  font-style: italic;
+  font-size: .8em;
+  margin-top: 2em;
+}
+
+th, td {
+  height: 56px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+th i {
+  color: rgba(120,120,120);
+  margin-left: .2em;
+  vertical-align: -.3em;
+}
+
+th:not(.current-sort-master) i {
+  display: none;
+}
+
+td {
+  height: 52px;
+}

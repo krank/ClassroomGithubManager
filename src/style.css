@@ -1,0 +1,193 @@
+:root,
+body {
+  --primary: hotpink;
+}
+
+html,
+body {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+
+button {
+  white-space: nowrap;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------------------------------------------------------
+   Main navigation pane (left)
+*/
+
+nav.main {
+  flex-direction: column;
+  padding: 2rem;
+}
+
+nav.main section {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+nav.main h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+nav.main ul {
+  margin-top: .5rem;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+nav.main ul a {
+  text-decoration: none;
+  color: rgb(44, 44, 44);
+  display: flex;
+  padding-left: .5rem;
+  padding-bottom: .1rem;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: left;
+}
+
+nav.main ul a::before {
+  font-family: 'Material Symbols Outlined';
+  content: "\f53c";
+  margin-right: .3rem;
+}
+
+nav.main ul a:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+nav.main li.active a::after {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-family: 'Material Symbols Outlined';
+  content: "\e5df";
+  font-size: 1.5rem;
+  flex-grow: 1;
+}
+
+/* -----------------------------------------------------------------------------
+   Crumbs
+*/
+
+nav.crumbs {
+  font-size: smaller;
+}
+
+nav.crumbs ul {
+  list-style: none;
+  display: flex;
+  gap: 0;
+}
+
+nav.crumbs li {
+  display: flex;
+}
+
+nav.crumbs a {
+  font-weight: 700;
+}
+
+nav.crumbs ul li:not(:last-child)::after {
+  font-family: var(--font-icon);
+  content: "\e5df";
+  font-size: 1.5rem;
+}
+
+/* -----------------------------------------------------------------------------
+   Main pane
+*/
+
+main {
+  padding: 2rem;
+}
+
+/* -----------------------------------------------------------------------------
+   Toolbar header
+*/
+
+header.toolbar {
+  margin: 2rem 0;
+  flex-direction: row;
+  justify-content: left;
+  background-color: transparent;
+  justify-content: space-between;
+}
+
+header.toolbar section.info p {
+  margin: 0;
+  font-size: smaller;
+  font-style: italic;
+}
+
+header.toolbar section.buttons ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: .5rem;
+}
+
+/* -----------------------------------------------------------------------------
+   Table
+*/
+
+table caption {
+  margin-top: 2rem;
+  caption-side: bottom;
+  font-style: italic;
+}
+
+table th i {
+  cursor: pointer;
+  float:right;
+}
+
+table th i::after {
+  content: "\e5db";
+  color: transparent;
+}
+
+table th i:hover::after {
+  color: inherit;
+}
+
+table th.current-sort-master i::after {
+  color: inherit;
+}
+
+table th.current-sort-master i:hover::after {
+  content: "\e5d8";
+}
+
+table th.current-sort-master.sort-reversed i::after {
+  content: "\e5d8";
+}
+
+table th.current-sort-master.sort-reversed i:hover::after {
+  content: "\e5db";
+}
+
+table td {
+  vertical-align: top;
+}
+
+table td[rowspan] ~ td {
+  /* border-block-end-color: yellow !important; */
+  border-block-end-style: dotted !important;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "classroom-github-manager",
+  "source": "src/index.html",
+  "scripts": {
+    "clean:output": "rimraf dist",
+    "start": "yarn run clean:output && parcel",
+    "build": "yarn run clean:output && parcel build"
+  },
+  "dependencies": {
+    "parcel": "^2.12.0"
+  },
+  "devDependencies": {
+    "@maxim_mazurok/gapi.client.classroom": "^1.0.20220806",
+    "@types/gapi": "^0.0.47",
+    "@types/gapi.client.classroom": "v1",
+    "@types/gapi.people": "^1.0.13",
+    "@types/google.accounts": "^0.0.15",
+    "jwt-decode": "^4.0.0"
+  }
+}
